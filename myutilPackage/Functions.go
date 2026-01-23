@@ -61,6 +61,7 @@ func createTransformer(factor int) func(int) int {
 
 func variaticSum(message string, nums ...int) (ans int) {
 	fmt.Println(message)
+	nums[0] = -34
 	for _, v := range nums {
 		ans += v
 	}
@@ -104,6 +105,7 @@ func Functions() {
 
 	fmt.Println(variaticSum("Added using variatic function", 3, 53, -35, 654))
 	fmt.Println(variaticSum("Again added using variatic function", numbers...))
+	fmt.Println(numbers)
 	fmt.Println()
 
 	// var j int

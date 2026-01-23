@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	myutil "mylearning/myutilPackage"
 )
 
 func main() {
@@ -29,7 +28,10 @@ func main() {
 	// PrintHello()
 	// myutil.Conditionals()
 	// myutil.Functions()
-	myutil.Slices()
+	// myutil.Slices()
+	// myutil.Structs()
+	// myutil.Interfaces()
+	// myutil.Maps()
 
 	// s := []int{1, 2, 3, 4, 5}
 	// a := []int{1, 2, 3, 4, 5}
