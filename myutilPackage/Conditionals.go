@@ -36,16 +36,20 @@ func Conditionals() {
 	switch stage {
 	case 0:
 		fmt.Println("You have entered the first stage")
-		stage++
+		// stage++
 		fallthrough
 	case 1:
 		fmt.Println("You have entered the second stage")
 		stage++
+		if stage == 0 {
+			break
+		}
 		fallthrough
+		// break
 	case 2:
 		fmt.Println("You have entered the third stage")
 		stage++
-		fallthrough
+		// fallthrough
 	case 3:
 		fmt.Println("You have entered the final stage")
 	}

@@ -1,5 +1,10 @@
 package main
 
+import (
+	"fmt"
+	myutil "mylearning/myutilPackage"
+)
+
 func main() {
 	// BASICS
 	// fmt.Println("Hello world!")
@@ -24,7 +29,7 @@ func main() {
 	// PrintHello()
 	// myutil.Conditionals()
 	// myutil.Functions()
-	// myutil.Slices()
+	myutil.Slices()
 
 	// s := []int{1, 2, 3, 4, 5}
 	// a := []int{1, 2, 3, 4, 5}
@@ -33,4 +38,13 @@ func main() {
 	// fmt.Println(nums, len(nums), cap(nums))
 	// nums = append(nums, 2, 92, 02, -24)
 	// fmt.Println(nums, len(nums), cap(nums))
+
+	var point *int
+	fmt.Println(point)
+	a := 34
+	point = &a
+	var pop **int = &point
+	fmt.Println(pop, *pop, **pop)
+	var popop ***int = &pop
+	fmt.Println(popop, *popop, **popop)
 }

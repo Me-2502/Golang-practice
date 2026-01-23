@@ -51,7 +51,34 @@ func abnormalBehaviour() {
 	fmt.Println(madeSlice == nil)  // false
 }
 
+func badFunc() []byte {
+	buf := make([]byte, 1024)
+	return buf[:10]
+}
+
 func Slices() {
+	// SLICES
+	s := []int{3, 5, 6}
+	fmt.Println(len(s), cap(s))
+	s = s[:2]
+	fmt.Println(s, len(s), cap(s))
+	s = s[:3]
+	fmt.Println(s, len(s), cap(s))
+	var c = make([]int, 4, 5)
+	copy(c, s)
+	fmt.Println(c, len(c), cap(c))
+	c[1] = 3223
+	fmt.Println(c, s)
+	x := []int{1, 2, 3, 4, 5}
+	y := x[1:3]
+	z := x[1:3:3]
+	fmt.Println(cap(y), cap(z))
+	x = append(x[:2], x[3:]...)
+	fmt.Println(x, len(x), cap(x))
+	spaceBlocker := badFunc()
+	fmt.Println(len(spaceBlocker), cap(spaceBlocker))
+	fmt.Println()
+
 	abnormalBehaviour()
 
 	// Good practices
