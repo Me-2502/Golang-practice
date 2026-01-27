@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	myutil "mylearning/myutilPackage"
 )
 
 func main() {
@@ -32,6 +33,7 @@ func main() {
 	// myutil.Structs()
 	// myutil.Interfaces()
 	// myutil.Maps()
+	myutil.Errors()
 
 	// s := []int{1, 2, 3, 4, 5}
 	// a := []int{1, 2, 3, 4, 5}
@@ -41,6 +43,7 @@ func main() {
 	// nums = append(nums, 2, 92, 02, -24)
 	// fmt.Println(nums, len(nums), cap(nums))
 
+	fmt.Println("Main function:")
 	var point *int
 	fmt.Println(point)
 	a := 34
