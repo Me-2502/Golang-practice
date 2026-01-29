@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	myutil "mylearning/myutilPackage"
 )
 
 func main() {
@@ -26,14 +25,14 @@ func main() {
 	// fmt.Println(fruits, len(fruits))
 
 	// PACKAGES
-	// PrintHello()
+	Concurrency()
 	// myutil.Conditionals()
 	// myutil.Functions()
 	// myutil.Slices()
 	// myutil.Structs()
 	// myutil.Interfaces()
 	// myutil.Maps()
-	myutil.Errors()
+	// myutil.Errors()
 
 	// s := []int{1, 2, 3, 4, 5}
 	// a := []int{1, 2, 3, 4, 5}
@@ -46,10 +45,10 @@ func main() {
 	fmt.Println("Main function:")
 	var point *int
 	fmt.Println(point)
-	a := 34
-	point = &a
-	var pop **int = &point
-	fmt.Println(pop, *pop, **pop)
-	var popop ***int = &pop
-	fmt.Println(popop, *popop, **popop)
+	// a := 34
+	// point = &a
+	// var pop **int = &point
+	// fmt.Println(pop, *pop, **pop)
+	// var popop ***int = &pop
+	// fmt.Println(popop, *popop, **popop)
 }

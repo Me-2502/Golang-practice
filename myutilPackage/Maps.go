@@ -2,6 +2,7 @@ package myutil
 
 import (
 	"fmt"
+	"sync"
 	"time"
 	"unsafe"
 )
@@ -89,5 +90,26 @@ func Maps() {
 		unhinted[i] = (i << 2)
 	}
 	fmt.Println(time.Since(startTime))
+	fmt.Println()
+
+	var start time.Time
+	var sMap sync.Map
+	var nMap = make(map[int]int)
+	var hMap = make(map[int]int, 300)
+	start = time.Now()
+	for i := 0; i < 500; i++ {
+		sMap.Store(i, (i << 1))
+	}
+	fmt.Println(time.Since(start))
+	start = time.Now()
+	for i := 0; i < 500; i++ {
+		nMap[i] = (i << 1)
+	}
+	fmt.Println(time.Since(start))
+	start = time.Now()
+	for i := 0; i < 500; i++ {
+		hMap[i] = (i << 1)
+	}
+	fmt.Println(time.Since(start))
 	fmt.Println()
 }
