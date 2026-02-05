@@ -3,6 +3,8 @@ package main
 import (
 	"errors"
 	"fmt"
+	"sync"
+	"time"
 	"unsafe"
 )
 
@@ -36,6 +38,8 @@ func Concurrency() {
 			fmt.Println(err)
 		case i := <-done:
 			fmt.Println(i)
+		case <-time.After(time.Microsecond * 10):
+			fmt.Println("Time limit exceeded")
 		}
 	}
 	fmt.Println()
@@ -55,12 +59,43 @@ func Concurrency() {
 		for i := 0; i <= halfLen; i++ {
 			addChannel := addFunc(sliceElementToChannel)
 			numbers[i] = <-addChannel
-			fmt.Println(numbers[i])
+			// fmt.Println(numbers[i])
 		}
-		fmt.Println(numbers)
+		// fmt.Println(numbers)
 		numbers = numbers[0 : (len(numbers)+1)/2]
 	}
 	fmt.Println(numbers[0])
+	fmt.Println()
+
+	var wg sync.WaitGroup
+	fmt.Println(unsafe.Sizeof(wg))
+	wg.Add(1)
+	fmt.Println("Before done")
+	go func() {
+		fmt.Println("Done")
+		wg.Done()
+	}()
+	go func() {
+		fmt.Println("Extra")
+	}()
+	fmt.Println("After done")
+	// for i := 0; i < 10; i++ {
+	// 	i++
+	// }
+	wg.Wait()
+	fmt.Println()
+
+	p := sync.Pool{
+		New: func() any {
+			// return new(*bytes.Buffer)
+			return nil
+		},
+	}
+	fmt.Println(unsafe.Sizeof(p))
+	fmt.Println()
+
+	var c sync.Cond
+	fmt.Println(unsafe.Sizeof(c))
 	fmt.Println()
 }
 

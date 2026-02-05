@@ -1,8 +1,6 @@
 package main
 
-import (
-	"fmt"
-)
+import myutil "mylearning/myutilPackage"
 
 func main() {
 	// BASICS
@@ -15,6 +13,11 @@ func main() {
 	// fmt.Println(name)
 	// fmt.Scan(&name)
 	// fmt.Println(name)
+	// str := "héllohéllo"
+	// fmt.Println(len(str))
+	// for range 10 {
+	// 	fmt.Println("Hello world!")
+	// }
 
 	// ARRAYS
 	// numbers := [6]int{3, 4, -2, 92, 46}
@@ -25,7 +28,8 @@ func main() {
 	// fmt.Println(fruits, len(fruits))
 
 	// PACKAGES
-	Concurrency()
+	// Concurrency()
+	// workerPool()
 	// myutil.Conditionals()
 	// myutil.Functions()
 	// myutil.Slices()
@@ -33,6 +37,8 @@ func main() {
 	// myutil.Interfaces()
 	// myutil.Maps()
 	// myutil.Errors()
+	// myutil.Http()
+	myutil.Json()
 
 	// s := []int{1, 2, 3, 4, 5}
 	// a := []int{1, 2, 3, 4, 5}
@@ -42,9 +48,9 @@ func main() {
 	// nums = append(nums, 2, 92, 02, -24)
 	// fmt.Println(nums, len(nums), cap(nums))
 
-	fmt.Println("Main function:")
-	var point *int
-	fmt.Println(point)
+	// fmt.Println("Main function:")
+	// var point *int
+	// fmt.Println(point)
 	// a := 34
 	// point = &a
 	// var pop **int = &point
